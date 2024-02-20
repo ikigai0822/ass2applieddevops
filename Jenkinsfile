@@ -29,8 +29,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                 powershell 'mvn clean package'
-                 powershell 'mvn tomcat7:deploy'
+                 powershell 'mvn tomcat7:run'
             }
         }
     }

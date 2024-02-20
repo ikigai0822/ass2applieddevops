@@ -75,9 +75,9 @@
     <version>2.2</version>
     <configuration>
       <!-- http port -->
-      <port>9090</port>
+      <port>5000</port>
       <!-- application path always starts with /-->
-      <path>/</path>
+      <path>/weebapp</path>
       <!-- optional path to a context file -->
       <contextFile>${tomcatContextXml}</contextFile>
       <!-- optional system propoerties you want to add -->
@@ -96,11 +96,6 @@
     </configuration>
     <!-- For any extra dependencies needed when running embedded Tomcat (not WAR dependencies) add them below -->
     <dependencies>
-      <dependency>
-        <groupId>org.apache.derby</groupId>
-        <artifactId>derby</artifactId>
-        <version>\${derbyVersion}</version>
-      </dependency>
       <dependency>
         <groupId>javax.mail</groupId>
         <artifactId>mail</artifactId>
