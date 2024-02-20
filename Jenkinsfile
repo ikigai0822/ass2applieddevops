@@ -5,7 +5,7 @@ pipeline {
     maven 'MAVEN_HOME' 
   }
     stages {    
-           stage ('Build') {
+           stage ('Compile') {
           steps {
             powershell 'mvn compile'
           }
@@ -27,10 +27,10 @@ pipeline {
             }
         }
 
-        // stage('Deploy') {
-        //     steps {
-        //          sh 'mvn tomcat7:deploy'
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                 powershell 'mvn tomcat7:deploy'
+            }
+        }
     }
 }
