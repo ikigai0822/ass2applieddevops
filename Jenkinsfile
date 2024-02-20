@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven' // Name of the Maven installation
+        maven 'MAVEN_HOME' // Name of the Maven installation
         sonarqube 'SonarQube'
     }
 
