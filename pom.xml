@@ -18,6 +18,8 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <sonar.plugin.version>3.9.0.2155</sonar.plugin.version>
+    <sonar.host.url>http://localhost:9000</sonar.host.url> <!-- Replace with your SonarQube server URL -->
+    <sonar.login>squ_f6e94a1fbbfcbc1f7ba2a143d1a0504b63d11cd6</sonar.login> <!-- Replace with your SonarQube token -->
   </properties>
 
   <dependencies>
@@ -28,26 +30,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-<settings>
-    <pluginGroups>
-        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
-    </pluginGroups>
-    <profiles>
-        <profile>
-            <id>sonar</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <!-- Optional URL to server. Default value is http://localhost:9000 -->
-                <sonar.host.url>
-                  http://myserver:9000
-                </sonar.host.url>
-            </properties>
-        </profile>
-     </profiles>
-</settings>
 
 
   <build>
@@ -96,7 +78,7 @@
         <plugin>
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
-        <version>3.7.0.1746</version>
+        <version>3.9.0.2155</version> <!-- Replace with the latest version -->
       </plugin>
       </plugins>
     </pluginManagement>
