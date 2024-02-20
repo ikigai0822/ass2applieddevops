@@ -29,16 +29,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-            <groupId>org.apache.tomcat.maven</groupId>
-            <artifactId>tomcat7-maven-plugin</artifactId>
-            <version>2.2</version>
-            <configuration>
-                <url>http://localhost:5000/manager/text</url>
-                <server>localhost</server>
-                <path>/webbapp</path>
-            </configuration>
-        </dependency>
+   
   </dependencies>
 
 
@@ -75,16 +66,16 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
-        <!-- <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat6-maven-plugin</artifactId>
-          <version>2.3-SNAPSHOT</version>
-        </plugin>
         <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat7-maven-plugin</artifactId>
-          <version>2.3-SNAPSHOT</version>
-        </plugin> -->
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <url>http://localhost:5000/</url> <!-- Replace with your Tomcat's manager URL -->
+          <server>TomcatServer</server> <!-- Replace with your Maven server id -->
+          <path>/your-app</path> <!-- Replace with your app's context path -->
+        </configuration>
+      </plugin>
         <plugin>
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
