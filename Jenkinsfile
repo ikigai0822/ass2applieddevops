@@ -3,7 +3,6 @@ pipeline {
 
     tools {
         maven 'MAVEN_HOME' // Name of the Maven installation
-        sonarqube 'SonarQube'
     }
 
     stages {
