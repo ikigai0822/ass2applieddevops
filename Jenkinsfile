@@ -15,17 +15,17 @@ pipeline {
             powershell 'mvn -X sonar:sonar '
           }
         }
-        // stage('Unit test') {
-        //     steps {
-        //         sh 'mvn test'
-        //     }
-        // }
+        stage('Unit test') {
+            steps {
+                powershell 'mvn test'
+            }
+        }
 
-        // stage('Package') {
-        //     steps {
-        //         sh 'mvn package'
-        //     }
-        // }
+        stage('Package') {
+            steps {
+                powershell 'mvn package'
+            }
+        }
 
         // stage('Deploy') {
         //     steps {
