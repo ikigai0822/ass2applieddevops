@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         maven 'Maven' // Name of the Maven installation
+        sonarqube 'SonarQube'
     }
 
     stages {
@@ -14,7 +15,9 @@ pipeline {
 
         stage('Code Review') {
             steps {
-                // Code review steps go here
+                 withSonarQubeEnv('My SonarQube Server') {
+                    sh 'mvn sonar:sonar'
+                }
             }
         }
 
@@ -32,7 +35,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                // Deployment steps go here
+                 sh 'mvn tomcat7:deploy'
             }
         }
     }
