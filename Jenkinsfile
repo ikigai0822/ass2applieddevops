@@ -7,16 +7,16 @@ pipeline {
     stages {    
            stage ('Build') {
           steps {
-            powershell 'mvn clean package'
+            powershell 'mvn compile'
           }
         }
-        // stage('SonarQube analysis') {
-        //     steps {
-        //         withSonarQubeEnv('My SonarQube Server') {
-        //             sh 'mvn sonar:sonar'
-        //         }
-        //     }
-        // }
+        stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('My SonarQube Server') {
+                    powershell 'mvn sonar:sonar'
+                }
+            }
+        }
         // stage('Unit test') {
         //     steps {
         //         sh 'mvn test'
