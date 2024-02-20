@@ -12,10 +12,8 @@ pipeline {
         }
         stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv('My SonarQube Server') {
-                    powershell 'mvn sonar:sonar'
-                }
-            }
+            powershell 'mvn sonar:sonar '
+          }
         }
         // stage('Unit test') {
         //     steps {
