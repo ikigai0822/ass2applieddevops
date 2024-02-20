@@ -29,7 +29,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                 powershell 'mvn tomcat7:deploy'
+                 powershell 'mvn tomcat6/7:deploy'
             }
         }
     }
