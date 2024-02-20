@@ -14,9 +14,12 @@ pipeline {
         }
 
         stage('SonarQube analysis') {
-    withSonarQubeEnv(credentialsId: 'squ_70c05ecf9276c5c3c43ec5682ce21dd348eca187', installationName: 'My SonarQube Server') { // You can override the credential to be used
-      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-    } }
+            withSonarQubeEnv(credentialsId: 'squ_70c05ecf9276c5c3c43ec5682ce21dd348eca187', installationName: 'My SonarQube Server') { // You can override the credential to be used
+            steps {
+                sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+              }
+            } 
+        }
 
         stage('Unit test') {
             steps {
