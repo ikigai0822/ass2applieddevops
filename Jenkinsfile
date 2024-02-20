@@ -1,17 +1,14 @@
 pipeline {
-    agent any
-
-    tools {
-        maven 'MAVEN_HOME'
-    }
+  agent any
+  tools {
+    maven 'maven-3.6.3' 
+  }
     stages {    
-        
-        stage('Compile') {
-            steps {
-                sh 'mvn compile'
-            }
+           stage ('Build') {
+          steps {
+            sh 'mvn clean package'
+          }
         }
-//
         // stage('SonarQube analysis') {
         //     steps {
         //         withSonarQubeEnv('My SonarQube Server') {
