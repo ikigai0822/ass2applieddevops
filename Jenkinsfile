@@ -12,7 +12,7 @@ pipeline {
         }
         stage('SonarQube analysis') {
             steps {
-            powershell 'mvn sonar:sonar '
+            powershell 'mvn -X sonar:sonar '
           }
         }
         // stage('Unit test') {
