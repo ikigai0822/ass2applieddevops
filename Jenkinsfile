@@ -5,7 +5,24 @@ pipeline {
         maven 'MAVEN_HOME'
     }
 
+    
+    
     stages {
+         stage('Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        credentialsId: 'ikigai0822',
+                        url: 'https://github.com/ikigai0822/ass2applieddevops'
+                    ]]
+                ])
+            }
+         }    
+        
         stage('Compile') {
             steps {
                 sh 'mvn compile'
