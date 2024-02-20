@@ -11,7 +11,7 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-
+//
         // stage('SonarQube analysis') {
         //     steps {
         //         withSonarQubeEnv('My SonarQube Server') {
