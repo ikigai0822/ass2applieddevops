@@ -1,12 +1,13 @@
 pipeline {
-  agent any
+  environment {
+    PATH = "C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin;${env.PATH}"
   tools {
     maven 'MAVEN_HOME' 
   }
     stages {    
            stage ('Build') {
           steps {
-            sh 'mvn clean package'
+            bat 'mvn clean package'
           }
         }
         // stage('SonarQube analysis') {
